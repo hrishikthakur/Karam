@@ -10,6 +10,6 @@ class Solution {
         
         Node temp = node.left;
         node.left = node.right;
-        node.right = temp;
+        node.right = temp; 
     }
 }
