@@ -1,4 +1,6 @@
-public boolean DFS(ArrayList<Integer> adj[], boolean[] vis, int src, int dest){
+class Solution {
+    
+    public boolean DFS(ArrayList<Integer> adj[], boolean[] vis, int src, int dest){
         if(src == dest) return true;
         
         vis[src] = true;
