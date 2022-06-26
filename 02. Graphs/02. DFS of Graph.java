@@ -17,7 +17,7 @@ class Solution {
         boolean[] vis = new boolean[V];
         
         ArrayList<Integer> res = new ArrayList<>();
-        DFS(0, adj, vis, res); // DFS(adj list, visited array, ...);
+        DFS(0, adj, vis, res); // DFS(src, adj list, visited array, ...);
         return res;
     }
 }
