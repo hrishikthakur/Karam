@@ -1,5 +1,3 @@
-// https://leetcode.com/problems/find-if-path-exists-in-graph/
-
 public boolean DFS(ArrayList<Integer> adj[], boolean[] vis, int src, int dest){
         if(src == dest) return true;
         
