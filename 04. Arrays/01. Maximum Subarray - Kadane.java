@@ -12,6 +12,6 @@ class Solution {
             maxSum = Math.max(currSum, maxSum);
         }
         
-        return maxSum;
+        return maxSum; 
     }
 }
