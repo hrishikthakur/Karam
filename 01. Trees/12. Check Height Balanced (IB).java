@@ -14,7 +14,7 @@ class Solution {
         int rh = height(root.right);
         if(Math.abs(lh - rh) <= 1 && isBalanced(root.left) == true && isBalanced(root.right) == true) return true;
         return false;
-    }
+    } 
 }
 
 // ****************************** O(N) ***************************************
