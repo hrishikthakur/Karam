@@ -41,4 +41,4 @@ class Solution {
     public boolean isBalanced(TreeNode root) {
         return helper(root).isBalanced;
     }
-}
+} 
