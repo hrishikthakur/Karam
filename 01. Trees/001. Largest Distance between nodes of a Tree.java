@@ -1,5 +1,3 @@
-// https://www.interviewbit.com/problems/largest-distance-between-nodes-of-a-tree/
-
 public class Solution {
 
     int globalDia = 0;
