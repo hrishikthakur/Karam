@@ -1,3 +1,5 @@
+// the problem is to "move all -ve numbers to the end"
+
 class Solution {
     
     public void segregateElements(int arr[], int n)
