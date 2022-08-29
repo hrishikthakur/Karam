@@ -1,3 +1,4 @@
+// Time - O(N * Primes), Space - O(K) for Primes Pointers
 class Solution {
     public int nthSuperUglyNumber(int n, int[] primes) {
         if(n == 1) return 1;
