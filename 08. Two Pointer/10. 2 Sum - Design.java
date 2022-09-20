@@ -1,3 +1,4 @@
+// Using ArrayList
 public class TwoSum {
     ArrayList<Integer> data;
     boolean isSorted;
@@ -6,7 +7,8 @@ public class TwoSum {
         data = new ArrayList<>();
         isSorted = true;
     }
-
+    
+    O(
     public void add(int number) {
         data.add(number);
         isSorted = false;
