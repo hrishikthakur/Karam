@@ -8,12 +8,13 @@ public class TwoSum {
         isSorted = true;
     }
     
-    O(
+    // O(1)
     public void add(int number) {
         data.add(number);
         isSorted = false;
     }
-
+    
+    // O(NlogN + N)
     public boolean find(int k) {
         if(isSorted == false){
             Collections.sort(data);
@@ -29,6 +30,36 @@ public class TwoSum {
                 lo++;
             }else{
                 hi--;
+            }
+        }
+
+        return false;
+    }
+}
+
+// Using HashMap
+public class TwoSum {
+
+    HashMap<Integer, Integer> freq;
+
+    public TwoSum(){
+        freq = new HashMap<>();
+    }
+    
+    // O(1) in avg & O(N) in worst case
+    public void add(int number) {
+        freq.put(number, freq.getOrDefault(number, 0) + 1);
+    }
+
+    // O(N)
+    public boolean find(int k) {
+        for(int key : freq.keySet()){
+            int complement = k - key;
+            int freq_complement = freq.getOrDefault(complement, 0);
+            if(complement == key){
+                if(freq_complement >= 2) return true;
+            }else{
+                if(freq_complement >= 1) return true;
             }
         }
 
