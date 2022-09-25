@@ -102,3 +102,5 @@ class Solution {
         return kSum(nums, 0, 4, target);
     }
 }
+
+// Using HashMap -> Time:O(), Space:O()
