@@ -103,4 +103,52 @@ class Solution {
     }
 }
 
-// Using HashMap -> Time:O(), Space:O()
+// Using HashMap -> Time:O(N ^ 4), Space:O(N ^ 2)
+// Gives TLE
+class Solution {
+    
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        
+        HashMap<Integer, List<int[]>> AB = new HashMap<>();
+        for(int i = 0; i < nums.length - 1; i++){
+            for(int j = i + 1; j < nums.length; j++){
+                int sum = nums[i] + nums[j];
+                int[] idx_pair = new int[2];
+                idx_pair[0] = i;
+                idx_pair[1] = j;
+                
+                if(AB.containsKey(sum) == false){
+                    List<int[]> temp = new ArrayList<>();
+                    AB.put(sum, temp);
+                }
+                AB.get(sum).add(idx_pair);
+            }
+        }
+        
+        HashSet<List<Integer>> uniques = new HashSet<>();
+        for(int p = 0; p < nums.length; p++){
+            for(int q = p + 1; q < nums.length; q++){
+                int rem_target = target - nums[p] - nums[q];
+                if(AB.containsKey(rem_target)){
+                    for(int[] idx_pair : AB.get(rem_target)){
+                        if(p != idx_pair[0] && p != idx_pair[1] && q != idx_pair[0] && q != idx_pair[1]){
+                            List<Integer> quad = new ArrayList<>();
+                            quad.add(nums[idx_pair[0]]);
+                            quad.add(nums[idx_pair[1]]);
+                            quad.add(nums[p]);
+                            quad.add(nums[q]);
+                            Collections.sort(quad);
+                            uniques.add(quad);
+                        }
+                    }
+                }
+            }
+        }
+        
+        List<List<Integer>> res = new ArrayList<>();
+        for(List<Integer> quad : uniques){
+            res.add(quad);
+        }
+        return res;
+    }
+}
