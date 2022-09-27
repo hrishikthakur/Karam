@@ -1,4 +1,4 @@
-// Two Pointer -> Time:O(n), Space:O(1)
+// Two Pointer -> Time:O(n), Space: O(1)
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int i = 0, j = numbers.length - 1;
