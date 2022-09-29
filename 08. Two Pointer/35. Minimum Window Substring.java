@@ -13,7 +13,7 @@ class Solution {
         for(int right = 0; right < s.length(); right++){
             char inc = s.charAt(right);
             freq.put(inc, freq.getOrDefault(inc, 0) + 1);
-            if(pattern.getOrDefault(inc, 0).equals(freq.get(inc))) count_matching++;
+            if(pattern.getOrDefault(inc, 0).equals(freq.get(inc))) count_matching++; // .equals
             
             while(count_matching == pattern.size()){
                 if(right - left + 1 < min_len){
