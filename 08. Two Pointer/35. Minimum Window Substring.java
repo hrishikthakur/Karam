@@ -1,3 +1,4 @@
+// Time:O(2(s.length)), Space:O(s.length + t.length)
 class Solution {
     public String minWindow(String s, String t) {
         HashMap<Character, Integer> pattern = new HashMap<>();
