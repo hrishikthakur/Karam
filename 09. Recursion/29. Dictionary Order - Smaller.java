@@ -19,12 +19,12 @@ public class Main {
 
     public static void main(String args[]) {
         Scanner scn  = new Scanner(System.in);
-		String input = scn.nextLine();
-		char[] arr = input.toCharArray();
-		Arrays.sort(arr);
-		String sorted = new String(arr);
+	String input = scn.nextLine();
+	char[] arr = input.toCharArray();
+	Arrays.sort(arr);
+	String sorted = new String(arr);
 
-		boolean[] vis = new boolean[input.length()];
-		permute(vis, "", sorted, input);
+	boolean[] vis = new boolean[input.length()];
+	permute(vis, "", sorted, input);
     }
 }
