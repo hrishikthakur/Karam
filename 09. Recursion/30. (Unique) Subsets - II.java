@@ -38,3 +38,42 @@ class Solution {
         return res;
     }
 }
+
+// Box on level
+// Unique Concept
+class Solution {
+    public static void getSubsets(int lastItem, List<List<Integer>> res, ArrayList<Integer> uniques,
+                                 List<Integer> subset, HashMap<Integer, Integer> freq){
+        
+        
+        res.add(new ArrayList<>(subset));
+        for(int i = lastItem; i < uniques.size(); i++){
+            int val = uniques.get(i);
+            int oldFreq = freq.get(val);
+            if(oldFreq > 0){
+                freq.put(val, oldFreq - 1);
+                subset.add(uniques.get(i));
+                getSubsets(i, res, uniques, subset, freq);
+                subset.remove(subset.size() - 1);
+                freq.put(val, oldFreq);
+            }
+        }
+    }
+    
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        ArrayList<Integer> uniques = new ArrayList<>();
+        HashMap<Integer, Integer> freq = new HashMap<>();
+        for(int i = 0; i < nums.length; i++){
+            int val = nums[i];
+            if(freq.containsKey(val) == false){
+                uniques.add(val);
+                freq.put(val, 1);
+            }else{
+                freq.put(val, freq.get(val) + 1);
+            }
+        }
+        List<List<Integer>> res = new ArrayList<>();
+        getSubsets(0, res, uniques, new ArrayList<>(), freq);
+        return res;
+    }
+}
