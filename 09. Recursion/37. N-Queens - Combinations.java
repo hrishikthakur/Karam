@@ -1,6 +1,6 @@
 // Using Backtracking
 // Row on level, Cols as options
-// Each row can contains atmost 1 queen
+// Each row can contain at most 1 queen
 
 class Solution {
     
