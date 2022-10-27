@@ -1,4 +1,4 @@
-// LC -> Josephus
+// LC -> Josephus Algo
 class Solution {
     public int josephus(int n, int k){
         if(n == 1) return 0;
@@ -29,7 +29,7 @@ class Solution {
 }
 
 
-// PEP -> 
+// PEP ->
 public static int josephus(int n, int k){
     if(n == 0) return 0; // return the idx
     return (josephus(n - 1, k) + k) % n;
