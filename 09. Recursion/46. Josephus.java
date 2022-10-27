@@ -1,7 +1,7 @@
 // LC -> Josephus Algo
 class Solution {
     public int josephus(int n, int k){
-        if(n == 1) return 0;
+        if(n == 1) return 0; // returning the 0th idx
         return (josephus(n - 1, k) + k) % n;
     }
     
@@ -10,7 +10,14 @@ class Solution {
     }
 }
 
-// LC -> Using Queue
+// PEP -> Josephus Algo
+public static int josephus(int n, int k){
+    if(n == 1) return 0; // returning the 0th idx
+    return (josephus(n - 1, k) + k) % n;
+}
+
+
+// Using Queue
 class Solution {
     public int findTheWinner(int n, int k) {
         Queue<Integer> q = new ArrayDeque<>();
@@ -26,11 +33,4 @@ class Solution {
         }
         return q.peek();
     }
-}
-
-
-// PEP ->
-public static int josephus(int n, int k){
-    if(n == 0) return 0; // return the idx
-    return (josephus(n - 1, k) + k) % n;
 }
