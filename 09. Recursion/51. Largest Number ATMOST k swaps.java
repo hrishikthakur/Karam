@@ -11,8 +11,10 @@ public static String swap(int i, int j, String str){
   }
 
 public static void findMaximum(String str, int k) {
-  if(str.compareTo(maxString) > 0) maxString = str;
+      
+      if(str.compareTo(maxString) > 0) maxString = str;
       if(k == 0) return;
+      
       for(int i = 0; i < str.length() - 1; i++){
           for(int j = i + 1; j < str.length(); j++){
               if(str.charAt(i) < str.charAt(j)){
