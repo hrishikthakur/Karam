@@ -1,3 +1,4 @@
+// [Has Path?](https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1#)
 class Solution {
     
     public boolean DFS(ArrayList<Integer> adj[], boolean[] vis, int src, int dest){
@@ -31,5 +32,3 @@ class Solution {
         return DFS(adj, vis, source, destination);
     }
 }
-
-https://leetcode.com/problems/find-if-path-exists-in-graph/description/
